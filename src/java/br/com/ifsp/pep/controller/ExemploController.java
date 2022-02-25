@@ -55,4 +55,17 @@ public class ExemploController implements Serializable {
         return pessoas;
     }
 
+    public void excluir() {
+        if(pessoa != null || pessoa.getNome().isEmpty()) {
+            addMessage(FacesMessage.SEVERITY_WARN, "Atenção!", "Selecione uma pessoa para excluir.");
+        }
+        for(Pessoa p : pessoas) {
+            if(p.getNome().equals(pessoa.getNome())) {
+                pessoas.remove(p);
+                addMessage(FacesMessage.SEVERITY_INFO, "Sucesso!", "Pessoa excluida com sucesso.");
+                return;
+            }
+        }
+    }
+
 }
