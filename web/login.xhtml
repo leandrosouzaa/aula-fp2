@@ -1,0 +1,100 @@
+<?xml version='1.0' encoding='UTF-8' ?>
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml"
+      xmlns:h="http://xmlns.jcp.org/jsf/html"
+      xmlns:p="http://primefaces.org/ui"
+      xmlns:f="http://xmlns.jcp.org/jsf/core">
+      <h:head>
+        <title>Facelet Title</title>
+        <link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Poppins" />
+        <h:outputStylesheet name="/css/primeflex.min.css" />
+      </h:head>
+    <h:body>
+            <div class="container">
+                <div class="main">
+                    <div style="padding: 16px;">
+                        <h1>Trabalho Login</h1>
+                        <span>Feito por Leandro Souza - PE3005739</span>
+                    </div>
+                
+                    <h:form class="form" id="formulario">
+                        <p:growl id="growl" showDetail="true" />
+                        <h2>Entre</h2>
+                        <span class="ui-input" style="width: 100%; margin-bottom: 8px">
+                            <p:inputText placeholder="Seu E-mail" style="width: 100%" value="#{userController.user.username}"/>
+                        </span>
+                        <span class="ui-input" style="width: 100%; margin-bottom: 16px">
+                            <p:password value="#{userController.user.password}" placeholder="Sua Senha Secreta" id="password" toggleMask="true" redisplay="true" style="width: 318px !important; max-width: 100% !important"/>
+                        </span>
+                        <p:commandButton value="Entrar" action="#{userController.login}" class="button" update="formulario"/>
+                        <p:commandLink id="forgot" style="text-align: center;">
+                            <h:outputText value="Esqueci a Senha"/>
+                        </p:commandLink>
+
+                        <span style="font-size: 14px; color: #466386; margin-top: 16px">
+                            Caso tenha problemas para logar, entre em contato com admin@admin.com
+                        </span>
+                    </h:form>
+                </div>
+            </div>
+    </h:body>
+    <style>
+        body {
+            color: #f2f2f2;
+            background: #233348;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            font-family: 'Poppins', sans-serif !important;
+            height: 98vh;
+        }
+        
+        h1, h2, h3, h4 ,h5 {
+            font-weight: 900; 
+        }
+        
+        .button {
+            color: #f2f2f2 !important;
+            background-color: #0c6ce9 !important; 
+            margin-bottom: 16px; 
+            border: #0c6ce9 !important; 
+            font-weight: bold;
+            margin-bottom: 8px !important;
+        }
+        
+        .button:hover {
+            background-color: #257ef4 !important; ;
+        }
+        
+        .container {
+            background: #202f42;
+            width: 100%;
+            max-width: 430px !important;
+            padding-bottom: 48px;
+            padding-top: 48px;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            border-radius: 16px;
+        }
+        
+        .main {
+            width: 100%;
+            max-width: 350px;
+            background: #0c6ce9;
+            height: auto;
+            border-radius: 8px;
+        }
+        
+        .form {
+            display: flex;
+            flex-direction: column;
+            background-color: #2b3c51;
+            border-bottom-left-radius: 8px;
+            border-bottom-right-radius: 8px;
+            padding: 16px;
+
+        }
+    </style>
+</html>
+
